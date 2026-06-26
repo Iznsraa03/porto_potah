@@ -1,0 +1,68 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1024 256" width="1024" height="256">
+  <!-- Dark background to match portfolio theme -->
+  <rect width="1024" height="256" fill="#090d16"/>
+
+  <!-- Flutter logo tile 1: centered at x=128 -->
+  <g transform="translate(74, 52) scale(1.1875)">
+    <g fill="#3FB6D3">
+      <path d="M12.3 64.2L76.3 0h39.4L32.1 83.6z"/>
+      <path d="M76.3 128h39.4L81.6 93.9l34.1-34.8H76.3L42.2 93.5z"/>
+    </g>
+    <path fill="#27AACD" d="M81.6 93.9l-20-20-19.4 19.6 19.4 19.6z"/>
+    <path fill="#19599A" d="M115.7 128L81.6 93.9l-20 19.2L76.3 128z"/>
+    <linearGradient id="a1" gradientUnits="userSpaceOnUse" x1="59.365" y1="116.36" x2="86.825" y2="99.399">
+      <stop offset="0" stop-color="#1b4e94"/>
+      <stop offset=".63" stop-color="#1a5497"/>
+      <stop offset="1" stop-color="#195a9b"/>
+    </linearGradient>
+    <path fill="url(#a1)" d="M61.6 113.1l30.8-8.4-10.8-10.8z"/>
+  </g>
+
+  <!-- Flutter logo tile 2: centered at x=384 -->
+  <g transform="translate(330, 52) scale(1.1875)">
+    <g fill="#3FB6D3">
+      <path d="M12.3 64.2L76.3 0h39.4L32.1 83.6z"/>
+      <path d="M76.3 128h39.4L81.6 93.9l34.1-34.8H76.3L42.2 93.5z"/>
+    </g>
+    <path fill="#27AACD" d="M81.6 93.9l-20-20-19.4 19.6 19.4 19.6z"/>
+    <path fill="#19599A" d="M115.7 128L81.6 93.9l-20 19.2L76.3 128z"/>
+    <linearGradient id="a2" gradientUnits="userSpaceOnUse" x1="59.365" y1="116.36" x2="86.825" y2="99.399">
+      <stop offset="0" stop-color="#1b4e94"/>
+      <stop offset=".63" stop-color="#1a5497"/>
+      <stop offset="1" stop-color="#195a9b"/>
+    </linearGradient>
+    <path fill="url(#a2)" d="M61.6 113.1l30.8-8.4-10.8-10.8z"/>
+  </g>
+
+  <!-- Flutter logo tile 3: centered at x=640 -->
+  <g transform="translate(586, 52) scale(1.1875)">
+    <g fill="#3FB6D3">
+      <path d="M12.3 64.2L76.3 0h39.4L32.1 83.6z"/>
+      <path d="M76.3 128h39.4L81.6 93.9l34.1-34.8H76.3L42.2 93.5z"/>
+    </g>
+    <path fill="#27AACD" d="M81.6 93.9l-20-20-19.4 19.6 19.4 19.6z"/>
+    <path fill="#19599A" d="M115.7 128L81.6 93.9l-20 19.2L76.3 128z"/>
+    <linearGradient id="a3" gradientUnits="userSpaceOnUse" x1="59.365" y1="116.36" x2="86.825" y2="99.399">
+      <stop offset="0" stop-color="#1b4e94"/>
+      <stop offset=".63" stop-color="#1a5497"/>
+      <stop offset="1" stop-color="#195a9b"/>
+    </linearGradient>
+    <path fill="url(#a3)" d="M61.6 113.1l30.8-8.4-10.8-10.8z"/>
+  </g>
+
+  <!-- Flutter logo tile 4: centered at x=896 -->
+  <g transform="translate(842, 52) scale(1.1875)">
+    <g fill="#3FB6D3">
+      <path d="M12.3 64.2L76.3 0h39.4L32.1 83.6z"/>
+      <path d="M76.3 128h39.4L81.6 93.9l34.1-34.8H76.3L42.2 93.5z"/>
+    </g>
+    <path fill="#27AACD" d="M81.6 93.9l-20-20-19.4 19.6 19.4 19.6z"/>
+    <path fill="#19599A" d="M115.7 128L81.6 93.9l-20 19.2L76.3 128z"/>
+    <linearGradient id="a4" gradientUnits="userSpaceOnUse" x1="59.365" y1="116.36" x2="86.825" y2="99.399">
+      <stop offset="0" stop-color="#1b4e94"/>
+      <stop offset=".63" stop-color="#1a5497"/>
+      <stop offset="1" stop-color="#195a9b"/>
+    </linearGradient>
+    <path fill="url(#a4)" d="M61.6 113.1l30.8-8.4-10.8-10.8z"/>
+  </g>
+</svg>

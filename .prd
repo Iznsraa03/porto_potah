@@ -1,0 +1,97 @@
+# Product Requirements Document (PRD)
+**Project Name:** Interactive 3D Static Portfolio
+**Document Version:** 1.1
+**Target Platform:** Web Desktop & Mobile (PWA Ready)
+
+---
+
+## 1. Ringkasan Eksekutif
+Proyek ini bertujuan untuk membangun sebuah website portofolio statis satu halaman (*single-page*) yang modern dan interaktif. Portofolio ini dirancang untuk merepresentasikan identitas sebagai pengembang informatika melalui pemanfaatan elemen 3D interaktif pada *Hero Section*, serta menampilkan keahlian teknis dan riwayat proyek secara terstruktur.
+
+---
+
+## 2. Sistem Desain & Tema (UI/UX)
+Desain mengutamakan estetika minimalis dengan kontras tinggi yang merepresentasikan nuansa *tech-centric*.
+
+* **Palet Warna Utama:** * **Background:** Hitam Solid (`#000000` / `bg-black`).
+    * **Surface/Card:** Hitam keabuan gelap (`#050505` hingga `#0a0a0a`).
+    * **Aksen:** Varian Biru (`blue-400`, `blue-500`, `blue-600`) untuk teks *highlight*, *border*, dan *hover state*.
+* **Tipografi:** Sans-serif modern dengan dukungan *font weight* dinamis (fokus pada keterbacaan tinggi).
+* **Aset Visual Kustom:**
+    * **Avatar:** Menggunakan gaya *pixel art* atau *graffiti* untuk bagian depan identitas kartu Lanyard.
+    * **Tali Lanyard:** Menggunakan corak logo KeDai Computerworks (KDCW) sebagai tekstur berulang pada tali Lanyard 3D.
+
+---
+
+## 3. Spesifikasi Teknis (Tech Stack)
+
+| Komponen | Teknologi Pilihan | Deskripsi Penggunaan |
+| :--- | :--- | :--- |
+| **Core Framework** | React + Vite / Next.js | Sebagai *engine* rendering antarmuka dan *bundler* file statis. |
+| **Styling** | Tailwind CSS | Penyusunan *layout* grid/flexbox responsif dan pewarnaan komponen secara utilitas. |
+| **3D Component** | React Bits `<Lanyard />` | Komponen siap pakai untuk Lanyard 3D interaktif. |
+| **3D Rendering** | `@react-three/fiber` & `drei` | Mengelola kanvas WebGL untuk memuat objek `.glb`. |
+| **Physics Simulation**| `@react-three/rapier` | Memberikan efek gravitasi dan interaksi *swing/drag* pada model 3D Lanyard. |
+| **PWA Support** | `vite-plugin-pwa` / Workbox | Konfigurasi `manifest.json` dan *service worker* agar portofolio dapat diinstal di *mobile*. |
+
+---
+
+## 4. Struktur Halaman & Fungsionalitas
+
+### 4.1. Hero Section (Split View)
+* **Layout Behavior:** * *Desktop:* Terbagi dua kolom (50% Kiri, 50% Kanan).
+    * *Mobile:* Kolom vertikal bersusun (Teks di atas, Kanvas 3D di bawah).
+* **Bagian Kiri (Teks Informatif):**
+    * Nama lengkap pengembang (Heading H1).
+    * Tagline profesi ("Informatics Developer") dengan efek gradien biru.
+    * Deskripsi singkat tentang fokus pengembangan sistem *backend* dan *web mobile-first*.
+* **Bagian Kanan (Interactive 3D Lanyard):**
+    * Implementasi komponen khusus dari React Bits.
+
+#### 4.1.1. Spesifikasi Komponen Lanyard (React Bits)
+Komponen `<Lanyard />` akan disematkan pada bagian kanan *Hero Section* dengan spesifikasi teknis berikut:
+
+* **Dependencies:** `three`, `meshline`, `@react-three/fiber`, `@react-three/drei`, `@react-three/rapier`.
+* **Props Configuration:**
+    * `position={[0, 0, 20]}`: Penyesuaian sumbu Z agar ukuran proporsional pada setengah layar desktop.
+    * `gravity={[0, -40, 0]}`: Vektor gravitasi standar untuk simulasi fisika Lanyard.
+    * `frontImage="/images/pixel-avatar.png"`: Aset tekstur bagian depan kartu.
+    * `lanyardImage="/images/kdcw-band.png"`: Aset tekstur tali lanyard.
+    * `lanyardWidth={1.5}`: Pelebaran dimensi tali untuk mengakomodasi logo secara optimal.
+* **Implementasi Kode:**
+    ```jsx
+    <Lanyard 
+      position={[0, 0, 20]} 
+      gravity={[0, -40, 0]} 
+      frontImage="/images/pixel-avatar.png" 
+      lanyardImage="/images/kdcw-band.png"
+      lanyardWidth={1.5}
+    />
+    ```
+
+### 4.2. Skills Section
+* **Layout Behavior:** *Grid System* (3 Kolom pada Desktop, 1 Kolom pada Mobile).
+* **Konten Kategori:**
+    * **Backend:** Menampilkan Go (Fiber), Laravel 12, RESTful APIs.
+    * **Frontend:** Menampilkan Next.js, React, Tailwind CSS.
+    * **Architecture:** Menampilkan Microservices, PWA, Web Security.
+* **Interaksi UI:** Kartu *skill* memiliki *border* transparan yang akan menyala menjadi biru saat terkena interaksi *hover*.
+
+### 4.3. Projects Section
+* **Layout Behavior:** *Grid System* berbentuk *Cards* yang terstruktur.
+* **Spesifikasi Kartu Proyek:**
+    * Menampilkan Judul Proyek, Deskripsi Singkat, dan *Badge* Teknologi.
+    * Transisi halus (*smooth transition*) pada *border* menjadi biru saat *hover*.
+* **Daftar Proyek Awal:**
+    1.  **Alfiyah Booking App:** Sistem reservasi *makeup artist* dengan segmentasi admin.
+    2.  **Microservices Company Profile:** Simulasi *microservices* pada *layout single-page*.
+    3.  **University Web Security:** Analisis kriptografi dan *security* akademik.
+
+---
+
+## 5. Performa & Optimasi (Non-Functional Requirements)
+
+1.  **Vite Asset Configuration:** Menambahkan `assetsInclude: ['**/*.glb']` pada `vite.config.js` agar file model 3D dirender dengan benar.
+2.  **Optimasi Aset 3D:** Model `card.glb` dan tekstur `lanyard.png` harus dikompresi agar ukuran total muatan awal (*First Contentful Paint*) berada di bawah batas wajar.
+3.  **Manajemen Render Mobile:** Mengurangi resolusi bayangan dan nilai Device Pixel Ratio (`dpr`) pada kanvas *Three.js* menjadi `1` atau `1.5` pada perangkat layar kecil untuk mencegah *frame drop*.
+4.  **PWA Requirements:** Menyediakan *icon masks* yang lengkap (192x192, 512x512) bernuansa biru-hitam dan konfigurasi warna `theme_color: "#000000"` di dalam `manifest.json`.

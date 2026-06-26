@@ -1,26 +1,84 @@
 @import "tailwindcss";
 
 :root {
-  --background: #ffffff;
-  --foreground: #171717;
+  --background: #000000;
+  --foreground: #f8fafc;
+  --blue-primary: #3b82f6;
+  --blue-light: #1e3a8a;
+  --blue-muted: #172554;
+  --blue-dark: #60a5fa;
+  --surface: #0a0a0a;
+  --surface-elevated: #161616;
+  --border-subtle: #1e293b;
+  --font-sans: 'Inter', system-ui, -apple-system, sans-serif;
 }
 
 @theme inline {
   --color-background: var(--background);
   --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
+html {
+  scroll-behavior: smooth;
 }
 
 body {
   background: var(--background);
   color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+  font-family: var(--font-sans);
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+/* Section headings gradient */
+.section-title-gradient {
+  background: linear-gradient(135deg, #60a5fa 0%, #3b82f6 50%, #1d4ed8 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+/* Skill card hover */
+.skill-card {
+  transition: all 0.25s ease;
+  border: 1px solid var(--border-subtle);
+}
+.skill-card:hover {
+  border-color: #3b82f6;
+  box-shadow: 0 0 0 2px rgba(59, 130, 246, 0.2), 0 8px 32px rgba(59, 130, 246, 0.15);
+  transform: translateY(-3px);
+}
+
+/* Project card hover */
+.project-card {
+  transition: all 0.3s ease;
+  border: 1px solid var(--border-subtle);
+}
+.project-card:hover {
+  border-color: #3b82f6;
+  box-shadow: 0 0 0 2px rgba(59, 130, 246, 0.2), 0 16px 48px rgba(59, 130, 246, 0.2);
+  transform: translateY(-4px);
+}
+
+/* Badge */
+.tech-badge {
+  transition: background 0.2s ease;
+}
+
+/* Animated underline for nav */
+.nav-link {
+  position: relative;
+}
+.nav-link::after {
+  content: '';
+  position: absolute;
+  bottom: -2px;
+  left: 0;
+  width: 0;
+  height: 2px;
+  background: #3b82f6;
+  transition: width 0.25s ease;
+}
+.nav-link:hover::after {
+  width: 100%;
 }
