@@ -47,33 +47,43 @@ export const skills = [
 
 export const projects = [
   {
-    id: 'alfiyah-booking',
-    title: 'Alfiyah Booking App',
+    id: 'task-tracker-loco21pro',
+    title: 'Task Tracker Loco21Pro',
     description:
-      'Sistem reservasi makeup artist berbasis web dengan manajemen jadwal, segmentasi peran admin, dan notifikasi real-time.',
-    tags: ['Laravel 12', 'MySQL', 'Tailwind CSS', 'REST API'],
-    icon: '💄',
+      'Website tracking tugas untuk pelaksanaan event Loco21Pro. Memudahkan koordinasi dan pemantauan progres tugas antar divisi secara real-time.',
+    longDescription:
+      'Task Tracker Loco21Pro adalah sistem manajemen tugas berbasis web yang dirancang khusus untuk mendukung pelaksanaan event Loco21Pro. Aplikasi ini memungkinkan koordinator event memantau perkembangan tugas setiap divisi secara real-time, mengatur prioritas pekerjaan, dan memastikan semua tanggung jawab terlaksana tepat waktu. Dilengkapi dengan fitur notifikasi, pelaporan progres, dan manajemen anggota tim.',
+    tags: ['NextJS', 'React', 'ExpressJS'],
+    image: '/project/tasktrackerloco/loco.png',
+    status: 'Done' as const,
     gradient: 'from-zinc-950 to-zinc-900',
   },
   {
-    id: 'microservices-profile',
-    title: 'Microservices Company Profile',
+    id: 'bot-auto-click',
+    title: 'Bot Auto Click',
     description:
-      'Simulasi arsitektur microservices pada layout single-page company profile, dengan API gateway independen dan service orchestration.',
-    tags: ['Go Fiber', 'Docker', 'Nginx', 'React'],
-    icon: '🏢',
+      'Sistem Bot Auto Click untuk Android Virtual Device (AVD). Mengotomatiskan interaksi layar pada emulator Android secara presisi dan efisien.',
+    longDescription:
+      'Bot Auto Click adalah sistem otomatisasi yang dirancang untuk Android Virtual Device (AVD). Bot ini mampu mengeksekusi serangkaian aksi klik, gestur, dan input teks secara otomatis pada emulator Android dengan ketepatan koordinat yang tinggi. Cocok untuk keperluan pengujian aplikasi, simulasi interaksi pengguna, dan otomatisasi tugas berulang pada lingkungan Android tanpa memerlukan intervensi manual.',
+    tags: ['Python', 'ADB', 'Android Studio', 'AVD'],
+    image: '/project/botAutoClick/Autoclick.png',
+    status: 'On Progress' as const,
     gradient: 'from-zinc-900 to-zinc-950',
   },
   {
-    id: 'university-security',
-    title: 'University Web Security',
+    id: 'Comopay',
+    title: 'Comopay - Sport Booking System',
     description:
-      'Analisis kriptografi dan keamanan sistem akademik universitas — mencakup implementasi enkripsi data, hashing, dan audit kerentanan.',
-    tags: ['PHP', 'Cryptography', 'Security Audit', 'Laravel'],
-    icon: '🔐',
-    gradient: 'from-zinc-950 to-[#0a0a0a]',
+      'Aplikasi sistem booking online yang di lengkapi fitur wallet sebagai cost untuk melakukan booking',
+    longDescription:
+      'Aplikasi ini adalah platform pemesanan layanan (booking) modern yang dirancang untuk memberikan pengalaman transaksi yang cepat, aman, dan tanpa hambatan. Menggabungkan kemudahan penjadwalan dengan sistem pembayaran terpusat melalui fitur In-App Wallet, platform ini secara efektif menghilangkan kerumitan proses pembayaran manual dan mempercepat konfirmasi pesanan.',
+    tags: ['Golang', 'Flutter', 'NextJS'],
+    image: '/project/comopay/c4.png',
+    status: 'On Progress' as const,
+    gradient: 'from-zinc-900 to-zinc-950',
   },
 ];
+
 
 export const navItems = [
   {

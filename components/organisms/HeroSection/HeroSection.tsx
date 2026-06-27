@@ -76,7 +76,7 @@ export function HeroSection() {
           {[
             { label: 'Projects', value: '10+' },
             { label: 'Tech Stack', value: '3+' },
-            { label: 'Focus', value: 'Backend & Web' },
+            { label: 'Focus', value: 'Mobile Development' },
           ].map((stat) => (
             <div key={stat.label}>
               <p className="text-2xl font-bold text-blue-400">{stat.value}</p>
